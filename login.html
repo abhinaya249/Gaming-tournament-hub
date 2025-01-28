@@ -1,116 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Form </title>
-    <STYLE>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Login/Signup</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #001f3f, #001233), url('https://example.com/futuristic-buildings.jpg');
+            background-size: cover;
+            background-image: url('picturess/neon2.jpg');/*or neon1 or neon2*/
+            background-position: center;
+            color: white;
+        }
 
-    *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;}
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 16px;
+            padding: 20px 40px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            max-width: 400px;
+        }
 
-    body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url(bg.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;}
+        .container h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #00bcd4;
+        }
 
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: #001f3f;
+            color: white;
+            font-size: 1rem;
+        }
 
-    .full{
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(9px);
-    color:rgb(253, 28, 28);
-    border-radius: 12px;
-    padding: 30px 40px;}
+        .container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #00bcd4;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
 
-    .full h1{
-    font-size: 36px;
-    text-align: center;}
+        .container button:hover {
+            background: #008ba3;
+        }
 
-    .full .input-box{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    
-    margin: 30px 0;}
+        .container p {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
 
-    .input-box input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;}
+        .container a {
+            color: #00bcd4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    .input-box input::placeholder{
-    color:#1aeeef;}
-
-    .input-box i{
-    position: absolute;
-    right: 20px;
-    top: 30%;
-    transform: translate(-50%);
-    font-size: 20px;}
-
-    .full .btn{
-    width: 100%;
-    height: 45px;
-    background: #fffefe;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #050e2d;
-    font-weight: 600;}
-
-    .full .btn:hover {
-    background: #1aeeef;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
-    }
-    .full .register-link{
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;}
-
-    .register-link p a{
-    color: rgb(240, 43, 43);
-    text-decoration: none;
-    font-weight: 600;}
-
-    .register-link p a:hover{
-    text-decoration: underline;
-    color: crimson;}
-
-
-    </STYLE>
+        .container a:hover {
+            color: #008ba3;
+        }
+    </style>
 </head>
 <body>
-    <div class="full">
-        <h1>Login</h1>
-        <div class="input-box">
-        <input type="text" placeholder="Username" >
-        <br><br>
-        <input type="password" placeholder="Password" >
-        </div>
-        <br><br><br>
-        <a href="#" color="green">Forgot Password</a>
-        <br><br>
-        <button type="submit" class="btn">Login</button>
-        <div class="register-link">
-        <p style="font-family: ubuntu;">Dont have an account? <br><a href="#">Signup</a></p>
-        </div>
+    <div class="container">
+        <h1>Welcome to GameHub</h1>
+        <form action="#" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
     </div>
 </body>
 </html>
