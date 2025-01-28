@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Gamers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a href="#" class="logo">Gamers</a>
+        <ul class="nav">
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html">Games</a></li>
+            <li><a href="index.html">Tournaments</a></li>
+            <li><a href="index.html">Contact</a></li>
+        </ul>
+        <!-- From Uiverse.io by ZAKARIAE48CHELLE --> 
+<div class="input-wrapper">
+    <button class="icon">
+      <svg
+        width="25px"
+        height="25px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M22 22L20 20"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </button>
+    <input type="text" name="text" class="input" placeholder="search.." />
+  </div>
+  
+        <div class="toggleMenu" onclick="toggleMenu();"></div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile" id="profile">
+        <div class="card">
+            <img src="profile-avatar.png" alt="User Avatar" class="profile-avatar">
+            <h2>John Doe</h2>
+            <p>Gamer | Tournament Enthusiast | Streamer</p>
+            <a href="#" class="btn">Edit Profile</a>
+
+            <div class="stats">
+                <div>
+                    <h3>25</h3>
+                    <span>Total Tournaments</span>
+                </div>
+                <div>
+                    <h3>15</h3>
+                    <span>Wins</span>
+                </div>
+                <div>
+                    <h3>#42</h3>
+                    <span>Rank</span>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h3>Achievements</h3>
+                <ul>
+                    <li><i class='bx bx-trophy'></i> Champion of Apex Legends</li>
+                    <li><i class='bx bx-medal'></i> Top 5 in Valorant</li>
+                    <li><i class='bx bx-star'></i> MVP in COD Mobile</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="info">
+            <a href="#" class="logo">Gamers</a>
+            <p><i class='bx bx-copyright'></i> 2022 All Rights Reserved</p>
+            <ul>
+                <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+                <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        /* Sticky NavBar */
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        /* Responsive NavBar */
+        function toggleMenu() {
+            const toggleMenu = document.querySelector('.toggleMenu');
+            const nav = document.querySelector('.nav');
+            toggleMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+
+        /* Scrolling Animation Effects */
+        window.addEventListener('scroll', function () {
+            var anime = document.querySelectorAll('.animeX');
+            for (var s = 0; s < anime.length; s++) {
+                var windowheight = window.innerHeight;
+                var animetop = anime[s].getBoundingClientRect().top;
+                var animepoint = 150;
+
+                if (animetop < windowheight - animepoint) {
+                    anime[s].classList.add('active');
+                } else {
+                    anime[s].classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

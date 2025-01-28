@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Tournaments - Gammers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Gammers</a>
+        <ul class="nav">
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#tournaments">Tournaments</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- From Uiverse.io by ZAKARIAE48CHELLE --> 
+<div class="input-wrapper">
+    <button class="icon">
+      <svg
+        width="25px"
+        height="25px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M22 22L20 20"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </button>
+    <input type="text" name="text" class="input" placeholder="search.." />
+  </div>
+  
+        <div class="toggleMenu" onclick="toggleMenu();"></div>
+    </header>
+
+    <!-- Tournament Registration Section -->
+    <section class="tournament-register animeX" id="tournament-register">
+        <div class="container">
+            <h2>Register for Tournaments</h2>
+            <p>Fill in the details below to register for your favorite tournaments!</p>
+
+            <form action="#" method="post" class="register-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="game">Select Game:</label>
+                    <select id="game" name="game" required>
+                        <option value="">-- Choose Game --</option>
+                        <option value="apex">Apex Legends</option>
+                        <option value="valorant">Valorant</option>
+                        <option value="cod">Call of Duty Mobile</option>
+                        <option value="fortnite">Fortnite</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="team-name">Team Name:</label>
+                    <input type="text" id="team-name" name="team-name" placeholder="Enter your team name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="participants">Number of Participants:</label>
+                    <input type="number" id="participants" name="participants" placeholder="Enter number of participants" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn">Register Now</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="info">
+            <a href="#" class="logo">Gammers</a>
+            <p><i class='bx bx-copyright'></i> 2022 All Rights Reserved</p>
+            <ul>
+                <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+                <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        /* Sticky NavBar */
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        /* Responsive NavBar */
+        function toggleMenu() {
+            const toggleMenu = document.querySelector('.toggleMenu');
+            const nav = document.querySelector('.nav');
+            toggleMenu.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+
+        /* Scrolling Animation Effects */
+        window.addEventListener('scroll', function () {
+            var anime = document.querySelectorAll('.animeX');
+            for (var s = 0; s < anime.length; s++) {
+                var windowheight = window.innerHeight;
+                var animetop = anime[s].getBoundingClientRect().top;
+                var animepoint = 150;
+
+                if (animetop < windowheight - animepoint) {
+                    anime[s].classList.add('active');
+                } else {
+                    anime[s].classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
