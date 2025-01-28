@@ -1,131 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sign Up Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Signup</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: url(bg.jpg) no-repeat;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #001f3f, #001233), url('picturess/neon1.jpg');
+            background-image:  url('neon1.jpg');
             background-size: cover;
             background-position: center;
+            color: white;
         }
 
-        .full {
-            width: 420px;
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, .2);
-            backdrop-filter: blur(9px);
-            color: rgb(253, 28, 178);
-            border-radius: 12px;
-            padding: 30px 40px;
-        }
-
-        .full h1 {
-            font-size: 36px;
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 16px;
+            padding: 20px 40px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            max-width: 400px;
         }
 
-        .full .input-box {
-            position: relative;
-            width: 100%;
-            height: 50px;
-            margin: 30px 0;
+        .container h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #00bcd4;
         }
 
-        .input-box input {
+        .container input {
             width: 100%;
-            height: 100%;
-            background: transparent;
+            padding: 10px;
+            margin: 10px 0;
             border: none;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, .2);
-            border-radius: 40px;
-            font-size: 16px;
-            color: #fff;
-            padding: 20px 45px 20px 20px;
+            border-radius: 8px;
+            background: #001f3f;
+            color: white;
+            font-size: 1rem;
         }
 
-        .input-box input::placeholder {
-            color: #1aeeef;
-        }
-
-        .input-box i {
-            position: absolute;
-            right: 20px;
-            top: 30%;
-            transform: translate(-50%);
-            font-size: 20px;
-        }
-
-        .full .btn {
+        .container button {
             width: 100%;
-            height: 45px;
-            background: #fffefe;
+            padding: 12px;
+            margin-top: 10px;
             border: none;
-            outline: none;
-            border-radius: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            border-radius: 8px;
+            background: #00bcd4;
+            color: white;
+            font-size: 1rem;
             cursor: pointer;
-            font-size: 16px;
-            color: #050e2d;
-            font-weight: 600;
+            transition: background 0.3s ease;
         }
 
-        .full .btn:hover {
-            background: #1aeeef;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transform: translateY(-3px);
+        .container button:hover {
+            background: #008ba3;
         }
 
-        .full .login-link {
-            font-size: 14.5px;
-            text-align: center;
-            margin: 20px 0 15px;
+        .container p {
+            margin-top: 20px;
+            font-size: 0.9rem;
         }
 
-        .login-link p a {
-            color: rgb(240, 43, 43);
+        .container a {
+            color: #06bed6;
             text-decoration: none;
-            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
-        .login-link p a:hover {
-            text-decoration: underline;
-            color: crimson;
+        .container button:hover {
+            background: #00bcd4;
+            box-shadow: 0 0 12px 2.5px #00bcd4;
         }
     </style>
 </head>
 <body>
-    <div class="full">
-        <h1>Sign Up</h1>
-        <div class="input-box">
-            <input type="text" placeholder="Full Name">
-        </div>
-        <div class="input-box">
-            <input type="email" placeholder="Email">
-        </div>
-        <div class="input-box">
-            <input type="text" placeholder="Username">
-        </div>
-        <div class="input-box">
-            <input type="password" placeholder="Password">
-        </div>
-        <div class="input-box">
-            <input type="password" placeholder="Confirm Password">
-        </div>
-        <button type="submit" class="btn">Sign Up</button>
-        <div class="login-link">
-            <p style="font-family: ubuntu;">Already have an account? <br><a href="login.html">Login</a></p>
-        </div>
+    <div class="container">
+        <h1>Create Your Account</h1>
+        <form action="#" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="main.html">Login</a></p>
     </div>
 </body>
 </html>
