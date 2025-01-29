@@ -956,3 +956,296 @@ footer .info ul li:hover a i{
     opacity: 1;
   }
 
+/* gears styles */
+
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+
+.gears{
+    display: flex;
+    padding:20px;
+    justify-content: space-evenly;
+}
+.c1{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    margin:1em;
+    align-content: center;
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #122936;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.c1::before{
+    content: '';
+    position: absolute;
+    top:-50%;
+    width:100%;
+    height: 100%;
+    background:#2196f3;
+    transform:0.5s;
+    transform: skewY(-35deg);
+    transition: 0.35s ease-in-out;
+    }
+
+.c1:hover::before{
+    top:-50%;
+    transform: skewY(35deg);
+    transition: .35s ease-in;
+}  
+.c1::after{
+    content: 'phillips';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 8em;
+    color: rgba(0,0,0,0.1);
+}
+.c1 .imgBx{
+    margin-left:35px ;
+    position: relative;
+    align-items: center;
+    width: 200px;
+    height:280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    z-index: 1;
+}
+.c1 .imgBx img{
+    max-width: 100%;
+    transition:0.5s ease;
+}
+.c1:hover .imgBx img{
+
+    max-width: 70%;
+}
+.c1 .contentBx {
+    position: relative;
+    padding:10px;
+    display: flex;
+    top:50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    transition: 0.35s ease;
+}
+.c1 .contentBx h3{
+    font-size: 18px;
+    color:#fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.c1 .contentBx .price{
+    font-size: 24px;
+    color: #fff;
+    font-weight:500 ;
+    letter-spacing: 1px;
+}
+
+.c1:hover .contentBx {
+    top:0%;
+    transition: 0.35s ease;
+    opacity: 1;
+}
+.b1{
+    display: flex;
+    flex-wrap:nowrap ;
+    gap: 1.5rem;
+    justify-content: space-around;
+}
+/* From Uiverse.io by andrew-demchenk0 */ 
+.AI-button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #34974d;
+    background-color: #3aa856;
+  }
+  
+  .AI-button, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .AI-button .button__text {
+    transform: translateX(30px);
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .AI-button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #34974d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .AI-button .svg {
+    width: 30px;
+    stroke: #fff;
+  }
+  
+  .AI-button:hover {
+    background: #34974d;
+  }
+  
+  .AI-button:hover .button__text {
+    color: transparent;
+  }
+  
+  .AI-button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .AI-button:active .button__icon {
+    background-color: #2e8644;
+  }
+  
+  .AI-button:active {
+    border: 1px solid #2e8644;
+  }
+
+  /* From Uiverse.io by mrhyddenn */ 
+.buy-button {
+    position: relative;
+    padding: 0px 20px 0px 20px ;
+    border-radius: 7px;
+    border: 1px solid rgb(61, 106, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  .buy-button:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  .buy- button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .buy-button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .buy-button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  /* From Uiverse.io by alexmaracinaru */ 
+.cta {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+  
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+  
+  .hover-underline-animation {
+    position: relative;
+    color: #2196f3;
+    padding-bottom: 20px;
+  }
+  
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(61, 106, 255);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  
