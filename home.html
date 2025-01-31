@@ -1,0 +1,581 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Gaming Website</title>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Gamers</a>
+            <ul class="nav">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#tournaments">Tournaments</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- From Uiverse.io by ZAKARIAE48CHELLE --> 
+<div class="input-wrapper">
+    <button class="icon">
+      <svg
+        width="25px"
+        height="25px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M22 22L20 20"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </button>
+    <input type="text" name="text" class="input" placeholder="search games" />
+  </div>
+  
+  <!-- From Uiverse.io by devkatyall --> 
+<label class="popup">
+    <input type="checkbox" />
+    <div tabindex="0" class="burger">
+      <svg
+        viewBox="0 0 24 24"
+        fill="white"
+        height="20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 2c2.757 0 5 2.243 5 5.001 0 2.756-2.243 5-5 5s-5-2.244-5-5c0-2.758 2.243-5.001 5-5.001zm0-2c-3.866 0-7 3.134-7 7.001 0 3.865 3.134 7 7 7s7-3.135 7-7c0-3.867-3.134-7.001-7-7.001zm6.369 13.353c-.497.498-1.057.931-1.658 1.302 2.872 1.874 4.378 5.083 4.972 7.346h-19.387c.572-2.29 2.058-5.503 4.973-7.358-.603-.374-1.162-.811-1.658-1.312-4.258 3.072-5.611 8.506-5.611 10.669h24c0-2.142-1.44-7.557-5.631-10.647z"
+        ></path>
+      </svg>
+    </div>
+    <nav class="popup-window">
+      <legend>Quick Start</legend>
+      <ul>
+        <li>
+          <button>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 4v6.406l-3.753 3.741-6.463-6.462 3.7-3.685h6.516zm2-2h-12.388l1.497 1.5-4.171 4.167 9.291 9.291 4.161-4.193 1.61 1.623v-12.388zm-5 4c.552 0 1 .449 1 1s-.448 1-1 1-1-.449-1-1 .448-1 1-1zm0-1c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm6.708.292l-.708.708v3.097l2-2.065-1.292-1.74zm-12.675 9.294l-1.414 1.414h-2.619v2h-2v2h-2v-2.17l5.636-5.626-1.417-1.407-6.219 6.203v5h6v-2h2v-2h2l1.729-1.729-1.696-1.685z"
+              ></path>
+            </svg>
+            <span>Log In</span>
+          </button>
+        </li>
+        <li>
+          <button>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.598 9h-1.055c1.482-4.638 5.83-8 10.957-8 6.347 0 11.5 5.153 11.5 11.5s-5.153 11.5-11.5 11.5c-5.127 0-9.475-3.362-10.957-8h1.055c1.443 4.076 5.334 7 9.902 7 5.795 0 10.5-4.705 10.5-10.5s-4.705-10.5-10.5-10.5c-4.568 0-8.459 2.923-9.902 7zm12.228 3l-4.604-3.747.666-.753 6.112 5-6.101 5-.679-.737 4.608-3.763h-14.828v-1h14.826z"
+              ></path>
+            </svg>
+            <span>Sign Up</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </label>
+            <div class="toggleMenu" onclick="toggleMenu();"></div>
+            
+        </header>
+
+        <!-- Home Banner -->
+        <div class="banner animeX" id="home">
+            <div class="bg">
+                <div class="content">
+                    <h2>A New Home for<br>
+                    Game Lovers</h2>
+                    <p>Team Professionals is here, It is a pleasure to meet you.</p>
+                    <a href="#" class="btn">Join Now</a>
+                </div>
+                <img src="assassin.png">
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="about animeX" id="about">
+            <div class="contentBx">
+                <h2>About Us</h2>
+                <p>Welcome to Gamers, the ultimate destination for gaming enthusiasts and competitive players! Our platform is designed to bring together gamers from all skill levels, offering them a space to compete, connect, and grow.
+
+                    At Gamers, we are passionate about fostering the gaming community and providing seamless experiences for players and organizers alike. Whether you’re here to prove your skills, discover new games, or simply have fun, we’ve got you covered!
+                    
+                    What We Offer:
+                    Exciting Tournaments: Join thrilling tournaments across a variety of games, from casual contests to high-stakes championships.
+                    Player Profiles: Showcase your achievements, stats, and gaming journey with a personalized profile.
+                    Seamless Registration: Effortlessly sign up for tournaments and stay updated with event details.
+                    Community Connections: Meet like-minded gamers, form teams, and build friendships that last beyond the leaderboard.
+                    We aim to be more than just a platform—we strive to create a vibrant community where competition meets camaraderie. Dive in and let’s make every game unforgettable!
+                    
+                    Let the games begin! 🎮
+                </p>
+                <a href="#">Read more</a>
+            </div>
+            <img src="videogame.png">
+        </div>
+
+        <!-- gears start -->
+        
+        <div class="gears">
+            <div class="c1">
+                <div class="imgBx">
+                    <img src="img\gears-img-1.png" width="">
+                </div>
+                <div class="contentBx">
+                    <h3>Wireless Headphones</h3>
+                    <h2 class="price">$40.<small>99</small></h2>
+                    <BR>
+                    <div class="b1">
+                    <!-- From Uiverse.io by mrhyddenn --> 
+                        <button class="buy-button">
+                            BUY 
+                        </button>
+                    <!-- From Uiverse.io by andrew-demchenk0 --> 
+
+                    <button type="button" class="AI-button">
+                        <span class="button__text">Add Item</span>
+                        <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                    </button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="c1">
+                <div class="imgBx">
+                    <img src="img\gears-img-2.png" width="">
+                </div>
+                <div class="contentBx">
+                    <h3>Wireless Headphones</h3>
+                    <h2 class="price">$40.<small>99</small></h2>
+                    <br>
+                    <div class="b1">
+                        <!-- From Uiverse.io by mrhyddenn --> 
+                            <button class="buy-button">
+                                BUY 
+                            </button>
+                        <!-- From Uiverse.io by andrew-demchenk0 --> 
+            
+                        <button type="button" class="AI-button">
+                            <span class="button__text">Add Item</span>
+                            <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                        </button>
+                        </div>
+                </div>
+                
+            </div>
+            <div class="c1">
+                <div class="imgBx">
+                    <img src="img\gears-img-3.png" width="">
+                </div>
+                <div class="contentBx">
+                    <h3>Wireless Headphones</h3>
+                    <h2 class="price">$40.<small>99</small></h2>
+                    <br>
+                    <div class="b1">
+                        <!-- From Uiverse.io by mrhyddenn --> 
+                            <button class="buy-button">
+                                BUY 
+                            </button>
+                        <!-- From Uiverse.io by andrew-demchenk0 --> 
+            
+                        <button type="button" class="AI-button">
+                            <span class="button__text">Add Item</span>
+                            <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                        </button>
+                        </div>
+                </div>
+                
+            </div>
+            <!-- From Uiverse.io by alexmaracinaru --> 
+        <button class="cta">
+            <span class="hover-underline-animation"> Shop now </span>
+            <svg
+            id="arrow-horizontal"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="10"
+            viewBox="0 0 46 16"
+            >
+            <path
+                id="Path_10"
+                data-name="Path 10"
+                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                transform="translate(30)"
+            ></path>
+            </svg>
+        </button>
+        
+        </div>
+<!-- gears end -->
+
+        <!-- Games -->
+        <div class="games animeX" id="games">
+            <h2>Popular Games</h2>
+            <ul>
+                <li class="list active" data-filter="all">All</li>
+                <li class="list" data-filter="pc">Pc games</li>
+                <li class="list" data-filter="mobile">Mobile games</li>
+            </ul>
+            <div class="cardBx">
+                <div class="card" data-item="pc">
+                    <img src="game1.png">
+                    <div class="content">
+                        <h4>Grand Theft Auto</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>&#8377;2,499</span></p>
+                            <a href="#">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="pc">
+                    <img src="game3.jpg">
+                    <div class="content">
+                        <h4>Batman Arkham City</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>&#8377;2,999</span></p>
+                            <a href="#">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="pc">
+                    <img src="game4.png">
+                    <div class="content">
+                        <h4>Assassins Creed Valhalla</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>&#8377;2,199</span></p>
+                            <a href="#">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="pc">
+                    <img src="game5.jpg">
+                    <div class="content">
+                        <h4>Spider man</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>&#8377;1,800</span></p>
+                            <a href="#">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="pc">
+                    <img src="game6.jpg">
+                    <div class="content">
+                        <h4>God of War</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>&#8377;3,999</span></p>
+                            <a href="#">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="mobile">
+                    <img src="game7.jpg">
+                    <div class="content">
+                        <h4>Battle Grounds Mobile</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>Free</span></p>
+                            <a href="#">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="mobile">
+                    <img src="game8.jpg">
+                    <div class="content">
+                        <h4>Call Of Duty</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>Free</span></p>
+                            <a href="#">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="mobile">
+                    <img src="game9.jpg">
+                    <div class="content">
+                        <h4>Free Fire</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>Free</span></p>
+                            <a href="#">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-item="mobile">
+                    <img src="game10.jpg">
+                    <div class="content">
+                        <h4>Shadow Fight Arena</h4>
+                        <div class="progress-line"><span></span></div>
+                        <div class="info">
+                            <p>Pricing<br><span>Free</span></p>
+                            <a href="#">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tournaments -->
+        <div class="tournaments animeX" id="tournaments">
+            <h2>Live Tournaments</h2>
+            <div class="boxBx">
+                <div class="box">
+                    <img src="tournament1.jpg">
+                    <div class="content">
+                        <h4><span>50</span> Matches in progress..</h4>
+                        <p>It is time to unleash an adrenaline packed adventure in the BATTLEGROUNDS, the ultimate action game and multiplayer game experience!</p>
+                       <div class="btn">
+                           <a href="https://www.youtube.com/channel/UCsGtpCu0tZXJO8AFPU2E_Pg/live" class="watch">Watch</a>
+                           <a href="#" class="join">Register Now</a>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="tournament2.jpeg">
+                    <div class="content">
+                        <h4><span>30</span> Matches in progress..</h4>
+                        <p>Among Us is a multiplayer party game set in space, where players work together to complete tasks while trying to identify the Impostors among the crew.</p>
+                       <div class="btn">
+                           <a href="https://www.youtube.com/channel/UCn0QAnNB_vHr7Pry3Vo72lg/live" class="watch">Watch</a>
+                           <a href="#" class="join">Register Now</a>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="tournament3.jpg">
+                    <div class="content">
+                        <h4><span>40</span> Matches in progress..</h4>
+                        <p>Call of Duty: Mobile brings the iconic first-person shooter experience to your fingertips. Packed with classic maps, weapons, and modes from the legendary Call of Duty franchise, this game offers intense multiplayer battles.</p>
+                       <div class="btn">
+                           <a href="https://www.youtube.com/channel/UCNXJk0T4LRLpWS5XlVSg4uQ/live" class="watch">Watch</a>
+                           <a href="#" class="join">Register Now</a>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="tournament4.jpg">
+                    <div class="content">
+                        <h4><span>40</span> Matches in progress..</h4>
+                        <p>Free Fire is a fast-paced battle royale game designed for mobile gamers, offering intense 10-minute matches where 50 players fight to be the last one standing. Players parachute onto an island, collect weapons and resources, and strategize to survive while the play zone shrinks.</p>
+                       <div class="btn">
+                           <a href="https://www.youtube.com/channel/UC_vVy4OI86F0amXqFN_zTMg/live" class="watch">Watch</a>
+                           <a href="#" class="join">Register Now</a>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="tournament5.jpg">
+                    <div class="content">
+                        <h4><span>20</span> Matches in progress..</h4>
+                        <p>PUBG is a battle royale game where up to 100 players compete to be the last person or team standing. Players are dropped onto a massive map, scavenge for weapons, gear, and resources, and fight to survive as the play zone shrinks over time.</p>
+                       <div class="btn">
+                           <a href="https://www.youtube.com/channel/UCTDO0RgowRyaAEUrPnBAg4g/live" class="watch">Watch</a>
+                           <a href="#" class="join">Register Now</a>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="tournament6.jpg">
+                    <div class="content">
+                        <h4><span>50</span> Matches in progress..</h4>
+                        <p>Sekiro: Shadows Die Twice is an award-winning action-adventure game set in a beautifully crafted, dark, and mysterious version of Sengoku-era Japan. Players take on the role of Wolf, a skilled shinobi</p>
+                       <div class="btn">
+                           <a href="https://www.youtube.com/channel/UCYMzOrq0Soc4O_YmdG_C1Vw/live" class="watch">Watch</a>
+                           <a href="#" class="join">Register Now</a>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Contact for conducting the tournament-->
+        <div class="contact animeX" id="contact">
+            <div class="form">
+                <h1>Want to conduct one</h1>
+                <div class="inputBx">
+                    <p>Enter Company Name</p>
+                    <input type="text" placeholder="Full Name">
+                </div>
+                <div class="inputBx">
+                    <p>Enter Email</p>
+                    <input type="mail" placeholder="Email">
+                </div>
+                <div class="inputBx">
+                    <p>Enter date</p>
+                    <input type="date" placeholder="Date">
+                </div>
+                <div class="inputBx">
+                    <p>Enter Time</p>
+                    <input type="time" placeholder="Date">
+                </div>
+                <div class="inputBx">
+                    <p>Enter Grand Total</p>
+                    <input type="number" placeholder="&#8377;">
+                </div>
+                <div class="inputBx">
+                    <p>Message</p>
+                    <textarea placeholder="Deatiled descrption of how you want to conduct the tournament..."></textarea>
+                </div>
+                <div class="inputBx">
+                    <input type="submit" name="Submit">
+                </div>
+            </div>
+            <img src="contact.jpg">
+        </div>
+
+        <!-- Contact -->
+        <div class="contact animeX" id="contact">
+            <img src="contact.jpg">
+            <div class="form">
+                <h1>Contact Us</h1>
+                <div class="inputBx">
+                    <p>Enter Name</p>
+                    <input type="text" placeholder="Full Name">
+                </div>
+                <div class="inputBx">
+                    <p>Enter Email</p>
+                    <input type="mail" placeholder="Email">
+                </div>
+                <div class="inputBx">
+                    <p>Message</p>
+                    <textarea placeholder="Type here..."></textarea>
+                </div>
+                <div class="inputBx">
+                    <input type="submit" name="Submit">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="info">
+                <a href="#" class="logo">Gamers</a>
+                <p><i class='bx bx-copyright' ></i> 2025 All Rights Reserved</p>
+                <ul>
+                    <li><a href="#"><i class='bx bxl-facebook' ></i></a></li>
+                    <li><a href="#"><i class='bx bxl-instagram' ></i></a></li>
+                    <li><a href="#"><i class='bx bxl-twitter' ></i></a></li>
+                    <li><a href="#"><i class='bx bxl-youtube' ></i></a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <script>
+            /* Sticky NavBar */
+            window.addEventListener('scroll',function(){
+                var header = document.querySelector('header');
+                header.classList.toggle('sticky',window.scrollY > 0);
+            });
+
+            /* Responsive NavBar */
+
+            function toggleMenu(){
+                const toggleMenu = document.querySelector('.toggleMenu');
+                const nav = document.querySelector('.nav');
+                toggleMenu.classList.toggle('active')
+                nav.classList.toggle('active')
+            }
+
+            /* Scrolling Animation Effects */
+            window.addEventListener('scroll',function(){
+                var anime = document.querySelectorAll('.animeX');
+
+                for(var s = 0; s < anime.length; s++){
+                    var windowheight = window.innerHeight;
+                    var animetop = anime[s].getBoundingClientRect().top;
+                    var animepoint = 150;
+
+                    if(animetop < windowheight - animepoint){
+                        anime[s].classList.add('active');
+                    }
+                    else{
+                        anime[s].classList.remove('active');
+                    }
+                }
+            })
+
+
+
+
+
+            /* Filterable Cards */
+
+            let list = document.querySelectorAll('.list');
+            let card = document.querySelectorAll('.card'); 
+
+            for(let i = 0; i<list.length; i++){
+                list[i].addEventListener('click',function(){
+                    for(let j=0; j<list.length; j++){
+                        list[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+
+                    let dataFilter = this.getAttribute('data-filter');
+
+                    for( let k=0; k<card.length; k++)
+                    {
+                        card[k].classList.remove('active');
+                        card[k].classList.add('hide');
+
+                        if(card[k].getAttribute('data-item') == dataFilter || dataFilter == 'all'){
+                            card[k].classList.remove('hide');
+                            card[k].classList.add('active');
+                        }
+                    }
+                })
+            }
+
+            
+
+        </script>
+    </body>
+</html>
