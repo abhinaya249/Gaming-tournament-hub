@@ -360,7 +360,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;2,499</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Grand Theft Auto', 'game1.png')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -372,7 +372,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;2,999</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#"class="play-btn" onclick="openRegistrationForm('Batman Arkham City', 'game3.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -384,7 +384,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;2,199</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Assassins Creed Valhalla', 'game4.png')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -396,7 +396,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;1,800</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Spider man', 'game5.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -408,7 +408,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;3,999</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('God of War', 'game6.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -420,7 +420,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>Free</span></p>
-                            <a href="#">Play Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Battle Grounds Mobile', 'game7.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -432,7 +432,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>Free</span></p>
-                            <a href="#">Play Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Call Of Duty', 'game8.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -444,7 +444,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>Free</span></p>
-                            <a href="#">Play Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Free Fire', 'game9.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -456,13 +456,43 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>Free</span></p>
-                            <a href="#">Play Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Shadow Fight Arena', 'game10.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Registration Modal -->
+        <div id="registrationForm" class="form-container" >
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2 id="gameTitle">Register for Tournament</h2>
+            <img id="gameImage" src="" alt="Game Image" class="game-img">
+            
+            <form>
+                <label>Tournament Details:</label>
+                <textarea placeholder="Tournament Info"></textarea>
+        
+                <label>Region:</label>
+                <select>
+                    <option>North America</option>
+                    <option>Europe</option>
+                    <option>Asia</option>
+                </select>
+        
+                <label>Preferred Time Slot:</label>
+                <input type="time">
+        
+                <label>
+                    <input type="checkbox" required> I confirm I am 18 years or older.
+                </label>
+                <label>
+                    <input type="checkbox" required> I agree to the tournament rules and code of conduct.
+                </label>
+        
+                <button type="submit" id="reg">Register</button>
+            </form>
+        </div>
 
         <!-- Tournaments -->
         <div class="tournaments animeX" id="tournaments">
@@ -543,7 +573,7 @@
         </div>
 
         <!--Contact for conducting the tournament-->
-        <div class="contact animeX" id="contact">
+        <div class="contact animeX" >
             <div class="form">
                 <h1>Want to conduct one</h1>
                 <div class="inputBx">
@@ -701,30 +731,31 @@ function openRegistrationForm(gameTitle, gameImage) {
 }
 
 function closeForm() {
-    var modal = document.getElementById("registrationForm");
-    modal.style.display = "none"; // Hide the modal when this function is called
+    document.getElementById("registrationForm").style.display = "none";
+}
+function openForm(gameTitle, gameImage) {
+    document.getElementById("gameTitle").innerText = gameTitle;
+    document.getElementById("gameImage").src = gameImage;
+    document.getElementById("registrationForm").style.display = "block";
 }
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const token = localStorage.getItem("token");
-//     const username = localStorage.getItem("username");
 
-//     if (!token) {
-//         alert("You must log in first!");
-//         window.location.href = "login.html";
-//         return;
-//     }
+document.addEventListener("DOMContentLoaded", function() {
+    var formContainer = document.querySelector('.form-container');
+    formContainer.style.display = 'none'; // Initially hide the form.
 
-//     // Display the username
-//     if (username) {
-//         document.getElementById("username").textContent = username;
-//     } else {
-//         alert("Session expired. Please log in again.");
-//         localStorage.removeItem("token");
-//         window.location.href = "login.html";
-//     }
-// });
+    // Example for showing the form (can be triggered by some event like a button click)
+    document.getElementById('showFormButton').addEventListener('click', function() {
+        formContainer.style.display = 'block';
+    });
+
+    // Example for closing the form (can be triggered by clicking the close button)
+    document.querySelector('.close').addEventListener('click', function() {
+        formContainer.style.display = 'none';
+    });
+});
+
 
 document.addEventListener("DOMContentLoaded", async () => {
     const token = localStorage.getItem("token");
@@ -832,68 +863,79 @@ avatarOptions.forEach(option => {
     });
 });
 
-//document.getElementById("changePhoto").addEventListener("click", async () => {
-    // const fileInput = document.createElement("input");
-    // fileInput.type = "file";
-    // fileInput.accept = "image/*";
 
-    // fileInput.addEventListener("change", async (event) => {
-    //     const file = event.target.files[0];
-    //     if (!file) return;
+document.getElementById("reg").addEventListener("click", async (event) => {
+    event.preventDefault();
 
-    //     const formData = new FormData();
-    //     formData.append("avatar", file);
+    const token = localStorage.getItem("token"); // Get user's token
+    if (!token) {
+        alert("You need to be logged in to register.");
+        return;
+    }
 
-    //     try {
-    //         const token = localStorage.getItem("token");
-    //         const response = await fetch("http://localhost:3000/profile/avatar", {
-    //             method: "POST",
-    //             headers: { Authorization: `Bearer ${token}` },
-    //             body: formData,
-    //         });
+    const gameTitle = document.getElementById("gameTitle").innerText;
+    const gameImage = document.getElementById("gameImage").src;
+    const tournamentDetails = document.querySelector("textarea").value;
+    const region = document.querySelector("select").value;
+    const timeSlot = document.querySelector("input[type='time']").value;
 
-    //         const data = await response.json();
-    //         if (!response.ok) throw new Error(data.message);
+    const response = await fetch("http://localhost:3000/register-game", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ gameTitle, gameImage, tournamentDetails, region, timeSlot })
+    });
 
-    //         document.getElementById("profileAvatar").src = data.avatar; // Update image
-    //         alert("Profile photo updated successfully!");
-    //     } catch (error) {
-    //         alert(error.message);
-    //     }
-    // });
-
-    //fileInput.click(); // Open file selector
-//});
-
-// async function loadProfile() {
-//     const token = localStorage.getItem("token");
-//     const response = await fetch("http://localhost:3000/profile", {
-//         headers: { Authorization: `Bearer ${token}` },
-//     });
-
-//     const data = await response.json();
-//     console.log(data); // Check if the avatar is returned correctly
-//     if (response.ok) {
-//         document.getElementById("username").textContent = data.username;
-//         document.getElementById("bioDisplay").textContent = data.bio || "No bio yet";
-//         document.getElementById("profileAvatar").src = data.avatar || "/uploads/default-avatar.png";
-//     } else {
-//         alert("Error loading profile: " + data.message);
-//     }
-// }
+    const data = await response.json();
+    if (response.status === 400) {
+        alert(data.message); // Show error message if already registered
+    } else if (data.message === "Game registered successfully") {
+        alert("Successfully registered!");
+        closeForm(); // Close the form after successful registration
+        loadRegisteredGames(); // Refresh the list of registered games
+    } else {
+        alert("Failed to register.");
+    }
+});
 
 
-// loadProfile() 
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const token = localStorage.getItem("token");
-//     if (!token) {
-//         alert("You must log in first!");
-//         window.location.href = "login.html";
-//     }
-// });
+// Function to update the Registered Games section in Profile
+async function loadRegisteredGames() {
+    const token = localStorage.getItem("token");
+    if (!token) return;
 
+    const response = await fetch("http://localhost:3000/profile", {
+        headers: { Authorization: `Bearer ${token}` }
+    });
+
+    const data = await response.json();
+    const gamesContainer = document.querySelector(".registered-games");
+
+    gamesContainer.innerHTML = `<h3 class="section-title">Registered Games <span class="neon-effect">🎮</span></h3>`;
+
+    data.registeredGames.forEach(game => {
+        const gameCard = document.createElement("div");
+        gameCard.classList.add("game-card");
+        gameCard.innerHTML = `
+    <div class="game-info">
+        <h4>${game.gameTitle}</h4>
+        <img src="${game.gameImage}" class="game-img" alt="${game.gameTitle}" style="width: 120px; height: auto; border-radius: 10px;">
+        <p>${game.tournamentDetails}</p>
+        <p><strong>Region:</strong> ${game.region}</p>
+        <p><strong>Time Slot:</strong> ${game.timeSlot}</p>
+    </div>
+    <button class="play-button">Play Now</button>
+`;
+
+        gamesContainer.appendChild(gameCard);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", loadRegisteredGames);
 
 </script>
     </body>
