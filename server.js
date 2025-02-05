@@ -5,9 +5,7 @@ const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
-const multer = require("multer");
 const path = require("path");
-
 dotenv.config();
 const app = express();
 app.use(cors());
@@ -16,31 +14,26 @@ app.use(bodyParser.json());
 app.use(express.json());  // Correct Middleware
 app.use(express.urlencoded({ extended: true }));
 
-
 mongoose.connect("mongodb://127.0.0.1:27017/gaming_db", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("✅ MongoDB Connected"))
 .catch(err => console.log("❌ Database connection error:", err));
 
-// // Configure multer storage
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, "uploads/"); // Ensure files are stored in 'uploads' directory
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, Date.now() + path.extname(file.originalname)); // Rename file
-//     }
-// });
-
-// const upload = multer({ storage });
 
 const UserSchema = new mongoose.Schema({
     username: String,
     email: String,
     password: String,
     bio: { type: String, default: "" },
-    avatar: { type: String, default: "/uploads/default-avatar.png" }, // Default avatar
+    avatar: { type: String, default: "/uploads/default-avatar.png" },
+    registeredGames: [{ 
+        gameTitle: String, 
+        gameImage: String, 
+        tournamentDetails: String, 
+        region: String, 
+        timeSlot: String 
+    }]
 });
 
 
@@ -101,15 +94,15 @@ app.get("/profile", async (req, res) => {
         if (!token) return res.status(401).json({ message: "Unauthorized" });
 
         const decoded = jwt.verify(token, "secret");
-        const user = await User.findById(decoded.id).select("username bio avatar");
+        const user = await User.findById(decoded.id).select("username bio avatar registeredGames");
 
         if (!user) return res.status(404).json({ message: "User not found" });
 
-        // Send avatar URL
         res.json({
             username: user.username,
             bio: user.bio,
-            avatar: user.avatar || "/uploads/assassin.png"  // Provide default avatar if not set
+            avatar: user.avatar || "/uploads/assassin.png",
+            registeredGames: user.registeredGames || []
         });
 
     } catch (error) {
@@ -161,27 +154,38 @@ app.post("/profile/bio", async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
-// app.use("/uploads", express.static("uploads"));
-// // Avatar Upload Route
-// app.post("/profile/avatar", upload.single("avatar"), async (req, res) => {
-//     try {
-//         const token = req.headers.authorization?.split(" ")[1];
-//         if (!token) return res.status(401).json({ message: "Unauthorized" });
 
-//         const decoded = jwt.verify(token, "secret");
-//         const user = await User.findById(decoded.id);
-//         if (!user) return res.status(404).json({ message: "User not found" });
+app.post("/register-game", async (req, res) => {
+    try {
+        const token = req.headers.authorization?.split(" ")[1]; // Extract token
+        if (!token) return res.status(401).json({ message: "Unauthorized" });
 
-//         // Save new avatar path to database
-//         user.avatar = "/uploads/" + req.file.filename;
-//         await user.save();
+        const decoded = jwt.verify(token, "secret"); // Verify token
+        const user = await User.findById(decoded.id);
 
-//         res.json({ message: "Avatar updated successfully", avatar: user.avatar });
-//     } catch (error) {
-//         res.status(500).json({ message: "Server error" });
-//     }
-// });
-// // Serve Static Files (Allow direct access to uploaded images)
+        if (!user) return res.status(404).json({ message: "User not found" });
+
+        const { gameTitle, gameImage, tournamentDetails, region, timeSlot } = req.body;
+
+        // Check if the user is already registered for the game
+        const isAlreadyRegistered = user.registeredGames.some(game => game.gameTitle === gameTitle);
+
+        if (isAlreadyRegistered) {
+            return res.status(400).json({ message: "You have already registered for this game." });
+        }
+
+        // If not registered, add the game to their registered list
+        const newGame = { gameTitle, gameImage, tournamentDetails, region, timeSlot };
+        user.registeredGames.push(newGame);
+        await user.save();
+
+        res.json({ message: "Game registered successfully", registeredGames: user.registeredGames });
+
+    } catch (error) {
+        res.status(500).json({ message: "Server error" });
+    }
+});
+
 
 
 app.listen(3000, () => console.log("Server running on port 3000"));
