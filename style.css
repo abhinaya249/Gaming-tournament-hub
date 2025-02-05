@@ -609,6 +609,7 @@ footer .info ul li:hover a i{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: white;
     background: #050e2d;
 }
 
@@ -670,6 +671,7 @@ footer .info ul li:hover a i{
 .profile .card .stats div h3 {
     color: #1aeeef;
     font-size: 1.2em;
+    
 }
 
 .profile .card .stats div span {
@@ -1567,7 +1569,8 @@ footer .info ul li:hover a i{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: relative;
     z-index: 1100;
-}
+} 
+
 
 /* Heading */
 h2#gameTitle {
@@ -1674,4 +1677,61 @@ input[type="checkbox"] {
 #login a{
     color:#050e2d;
     background-color: white;
+}
+.game-card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+.game-card:hover {
+    transform: scale(1.05);
+}
+.game-card .game-img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.play-button {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    background-color: #ff6b81;
+}
+.game-thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.remove-game {
+    background: #ff4d4d;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-game:hover {
+    background: #cc0000;
+}
+
+.registered-games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
 }
