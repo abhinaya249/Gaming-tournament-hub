@@ -19,7 +19,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/gaming_db", {
     useUnifiedTopology: true
 }).then(() => console.log("✅ MongoDB Connected"))
 .catch(err => console.log("❌ Database connection error:", err));
-
+ 
 
 const UserSchema = new mongoose.Schema({
     username: String,
@@ -94,21 +94,21 @@ app.get("/profile", async (req, res) => {
         if (!token) return res.status(401).json({ message: "Unauthorized" });
 
         const decoded = jwt.verify(token, "secret");
-        const user = await User.findById(decoded.id).select("username bio avatar registeredGames");
+        const user = await User.findById(decoded.id);
 
         if (!user) return res.status(404).json({ message: "User not found" });
 
         res.json({
             username: user.username,
             bio: user.bio,
-            avatar: user.avatar || "/uploads/assassin.png",
+            avatar: user.avatar || "/uploads/default-avatar.png",
             registeredGames: user.registeredGames || []
         });
-
     } catch (error) {
         res.status(500).json({ message: "Invalid token or session expired" });
     }
 });
+
 
 
 // Update avatar route (Save selected avatar)

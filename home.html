@@ -243,7 +243,49 @@
         </div>
     </div>
 </div>
-
+<!-- gallery starts --><section class="gallery" id="gallery">
+  <div class="container">
+    <ul class="gallery-list has-scrollbar">
+      <!-- Gallery Item 1 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament1.jpg" alt="Gallery Image 1" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 2 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament2.jpg" alt="Gallery Image 2" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 3 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament3.jpg" alt="Gallery Image 3" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 4 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament4.jpg" alt="Gallery Image 4" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 5 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament5.jpg" alt="Gallery Image 5" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 6 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament6.jpg" alt="Gallery Image 6" loading="lazy">
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+ <!-- gallery ends -->
                 
         <!-- gears start -->
         <div class="gears animeX" id="gears">
@@ -346,7 +388,7 @@
 
         <!-- Games -->
         <div class="games animeX" id="games">
-            <h2>Popular Games</h2>
+            <h2 class="h-2">Popular Games</h2>
             <ul>
                 <li class="list active" data-filter="all">All</li>
                 <li class="list" data-filter="pc">Pc games</li>
@@ -496,7 +538,7 @@
 
         <!-- Tournaments -->
         <div class="tournaments animeX" id="tournaments">
-            <h2>Live Tournaments</h2>
+            <h2 class="h-2">Live Tournaments</h2>
             <div class="boxBx">
                 <div class="box">
                     <img src="tournament1.jpg">
@@ -575,7 +617,7 @@
         <!--Contact for conducting the tournament-->
         <div class="contact animeX" >
             <div class="form">
-                <h1>Want to conduct one</h1>
+                <h2 class="h-2">Want to conduct one</h2>
                 <div class="inputBx">
                     <p>Enter Company Name</p>
                     <input type="text" placeholder="Full Name">
@@ -755,8 +797,6 @@ document.addEventListener("DOMContentLoaded", function() {
         formContainer.style.display = 'none';
     });
 });
-
-
 document.addEventListener("DOMContentLoaded", async () => {
     const token = localStorage.getItem("token");
 
@@ -787,6 +827,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         window.location.href = "login.html";
     }
 });
+
+
 
 // Handle Bio Save
 document.getElementById("saveBio").addEventListener("click", async () => {
@@ -820,28 +862,44 @@ document.getElementById("saveBio").addEventListener("click", async () => {
         alert("Failed to update bio.");
     }
 });
-document.getElementById("changePhotoBtn").addEventListener("click", function() {
-    // Toggle the visibility of avatar options
-    const avatarOptions = document.getElementById("avatarOptions");
-    avatarOptions.style.display = avatarOptions.style.display === "none" ? "block" : "none";
+document.addEventListener("DOMContentLoaded", function () {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.error("No token found. User might not be logged in.");
+        return;
+    }
+
+    fetch("http://localhost:3000/profile", {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.avatar) {
+            document.getElementById("profileAvatar").src = data.avatar;
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching profile:", error);
+    });
 });
 
-// Add event listener to each avatar option
+document.getElementById("changePhotoBtn").addEventListener("click", function () {
+    document.getElementById("avatarOptions").style.display = "block";
+});
+
 const avatarOptions = document.querySelectorAll(".avatar-option");
 avatarOptions.forEach(option => {
-    option.addEventListener("click", function() {
-        // Get the selected avatar image source
+    option.addEventListener("click", function () {
         const selectedAvatar = option.getAttribute("data-avatar");
-        
-        // Update the profile image
         document.getElementById("profileAvatar").src = selectedAvatar;
 
-        // Add 'selected' class to show which avatar was selected (optional)
-        avatarOptions.forEach(img => img.classList.remove('selected')); // Remove 'selected' from all options
-        option.classList.add('selected'); // Add 'selected' class to clicked avatar
-        
-        // Optionally, save this avatar in the user's profile (send request to server)
         const token = localStorage.getItem("token");
+
         fetch("http://localhost:3000/profile/avatar", {
             method: "POST",
             headers: {
@@ -853,13 +911,13 @@ avatarOptions.forEach(option => {
         .then(response => response.json())
         .then(data => {
             alert(data.message);
+            localStorage.setItem("userAvatar", selectedAvatar); // Store in localStorage
         })
         .catch(error => {
             alert("Error updating avatar.");
         });
 
-        // Hide the avatar options after selection
-        avatarOptions.style.display = "none";
+        document.getElementById("avatarOptions").style.display = "none";
     });
 });
 
@@ -937,6 +995,36 @@ async function loadRegisteredGames() {
 
 document.addEventListener("DOMContentLoaded", loadRegisteredGames);
 
+// gallery js
+// Lazy Load Images in Gallery
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryImages = document.querySelectorAll(".gallery-item img");
+
+  galleryImages.forEach((img) => {
+    img.setAttribute("loading", "lazy");
+    img.addEventListener("load", () => {
+      img.classList.add("loaded");
+    });
+  });
+});
+// gallery
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryItems = document.querySelectorAll(".gallery-list li");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.2 }); // Trigger when 20% of the item is visible
+
+  galleryItems.forEach((item, index) => {
+    item.style.setProperty("--i", index); // Set custom property for delay
+    observer.observe(item);
+  });
+});
 </script>
     </body>
 </html>
