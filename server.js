@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.json());  // Correct Middleware
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://127.0.0.1:27017/gaming_db", {
+mongoose.connect("mongodb+srv://n210017:qwertyuiop@cluster0.zgoc8pg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("✅ MongoDB Connected"))
