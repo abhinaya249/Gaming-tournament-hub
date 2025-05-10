@@ -48,9 +48,13 @@ header .nav{
 }
 header ul li{
     list-style: none;
-    margin: 10px;
+    margin: 5px;
 }
-header ul li a{
+.popup{
+    position: fixed;
+    margin:10px ;
+}
+header ul li a  {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
@@ -190,10 +194,10 @@ header .action .searchBx input{
     flex-direction: column;
     margin: 40px auto;
 }
-.games h2{
+/* .games h2{
     color: #fff;
     margin: 10px 0;
-}
+} */
 .games ul{
     display: flex;
     justify-content: center;
@@ -224,6 +228,8 @@ header .action .searchBx input{
     align-items: center;
 }
 .games .cardBx .card{
+    min-width: 200px;
+    min-height: 350px;
     width: 280px;
     border-radius: 10px;
     margin: 20px 40px;
@@ -303,6 +309,58 @@ header .action .searchBx input{
 .games .cardBx .card.hide{
     display: none;
 }
+/* responsive on games */
+/* For screens smaller than 768px (Tablets and Small Laptops) */
+@media (max-width: 768px) {
+    .games .cardBx .card {
+        width: 90%; /* Full width cards on small screens */
+        margin: 10px auto; /* Center cards */
+    }
+
+    .games .cardBx .card img {
+        height: 200px; /* Reduce image height */
+    }
+
+    .games .cardBx .card .content h4 {
+        font-size: 1.2em; /* Adjust font size for better readability */
+    }
+}
+
+/* For screens smaller than 576px (Mobile Phones) */
+@media (max-width: 576px) {
+    .games .cardBx .card {
+        width: 100%; /* Full width cards on mobile */
+        margin: 10px auto; /* Center cards */
+    }
+
+    .games .cardBx .card img {
+        height: 150px; /* Further reduce image height */
+    }
+
+    .games .cardBx .card .content h4 {
+        font-size: 1em; /* Further reduce font size */
+    }
+
+    .games .cardBx .card .info p {
+        font-size: 0.9em; /* Reduce font size for info text */
+    }
+
+    .games .cardBx .card .info a {
+        font-size: 0.9em; /* Reduce font size for buttons */
+        padding: 8px 16px; /* Reduce padding for buttons */
+    }
+}
+/* For screens larger than 1024px (Desktops) */
+@media (min-width: 1024px) {
+    .games .cardBx .card {
+        width: 320px; /* Slightly increase card width for larger screens */
+        margin: 20px 50px; /* Increase spacing between cards */
+    }
+
+    .games .cardBx .card img {
+        height: 300px; /* Increase image height */
+    }
+}
 
 .tournaments{
     padding: 0px 100px;
@@ -313,9 +371,11 @@ header .action .searchBx input{
     justify-content: center;
     align-items: center;
 }
-.tournaments h2{
+.h-2{
+    font-size: 3em;
+    font-weight: 700;
     color: #fff;
-    margin: 10px 0;
+    margin-bottom: 20px;
 }
 .tournaments .boxBx{
     width: 100%;
@@ -326,6 +386,8 @@ header .action .searchBx input{
     align-items: center;
 }
 .tournaments .boxBx .box{
+    min-width: 200px;
+    min-height: 350px;
     width: 350px;
     border-radius: 10px;
     margin: 20px 40px;
@@ -393,36 +455,111 @@ header .action .searchBx input{
     box-shadow: 0 0 10px #1aeeef;
 }
 
+/* Media Queries for Tournaments Section */
+
+/* For screens smaller than 768px (Tablets and Small Laptops) */
+@media (max-width: 768px) {
+    .tournaments .boxBx .box {
+        width: 90%; /* Full width boxes on small screens */
+        margin: 10px auto; /* Center boxes */
+    }
+
+    .tournaments .boxBx .box img {
+        height: 180px; /* Reduce image height */
+    }
+
+    .tournaments .boxBx .box .content h4 {
+        font-size: 1.2em; /* Adjust font size for better readability */
+    }
+}
+
+/* For screens smaller than 576px (Mobile Phones) */
+@media (max-width: 576px) {
+    .tournaments .boxBx .box {
+        width: 100%; /* Full width boxes on mobile */
+        margin: 10px auto; /* Center boxes */
+    }
+
+    .tournaments .boxBx .box img {
+        height: 150px; /* Further reduce image height */
+    }
+
+    .tournaments .boxBx .box .content h4 {
+        font-size: 1em; /* Further reduce font size */
+    }
+
+    .tournaments .boxBx .box .content p {
+        font-size: 0.9em; /* Reduce font size for description text */
+    }
+
+    .tournaments .boxBx .box .content .btn a {
+        font-size: 0.9em; /* Reduce font size for buttons */
+        padding: 8px 16px; /* Reduce padding for buttons */
+    }
+}
+/* For screens larger than 1024px (Desktops) */
+@media (min-width: 1024px) {
+    .tournaments .boxBx .box {
+        width: 400px; /* Slightly increase box width for larger screens */
+        margin: 20px 60px; /* Increase spacing between boxes */
+    }
+
+    .tournaments .boxBx .box img {
+        height: 250px; /* Increase image height */
+    }
+}
+/* Hover Effects for Games and Tournaments Cards */
+
+.games .cardBx .card:hover, .tournaments .boxBx .box:hover {
+    transform: translateY(-10px); /* Lift effect */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(26, 238, 239, 0.3); /* Neon glow */
+}
+
 /* contact */
-.contact{
-    padding: 20px 100px;
+/* Default Styles for Contact Us Section */
+.contact {
+    position: relative;
     width: 100%;
     min-height: 50vh;
+    padding: 60px 100px; /* Add padding to match other sections */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    background: #050e2d; /* Match the background color of the home page */
+    color: #fff;
 }
-.contact img{
-    height: 100%;
-    width: 50%;
+
+.contact img {
+    width: 45%;
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(26, 238, 239, 0.3);
 }
-.contact .form{
+
+.contact .form {
     width: 50%;
     margin: 30px;
 }
-.contact .form h1{
+
+.contact .form h1 {
+    font-size: 2.5em;
     color: #fff;
+    margin-bottom: 20px;
 }
-.contact .form .inputBx{
+
+.contact .form .inputBx {
     margin: 10px 0;
 }
-.contact .form .inputBx p{
-    color: #fff;
+
+.contact .form .inputBx p {
+    color: #dbd9d9;
+    margin-bottom: 5px;
 }
+
 .contact .form .inputBx input,
-.contact .form .inputBx textarea{
+.contact .form .inputBx textarea {
     border: none;
     outline: none;
     padding: 10px;
@@ -430,12 +567,16 @@ header .action .searchBx input{
     color: #fff;
     background: #1b2141;
     min-height: 15px;
-    font-size: 1.1em;
+    font-size: 1em;
+    border-radius: 5px;
 }
-.contact .form .inputBx textarea{
+
+.contact .form .inputBx textarea {
     height: 150px;
+    resize: none;
 }
-.contact .form .inputBx input[type="submit"]{
+
+.contact .form .inputBx input[type="submit"] {
     display: inline-block;
     padding: 10px 20px;
     margin: 15px 0;
@@ -448,14 +589,88 @@ header .action .searchBx input{
     border-radius: 5px;
     color: #fff;
     letter-spacing: 1px;
+    transition: 0.3s;
 }
-.contact .form .inputBx input[type="submit"]:hover{
+
+.contact .form .inputBx input[type="submit"]:hover {
     background: #1aeeef;
     border: none;
     color: #050e2d;
     box-shadow: 0 0 10px #1aeeef;
 }
 
+/* Responsive Design for Contact Us Section */
+
+/* For screens smaller than 991px (Tablets and Small Laptops) */
+@media (max-width: 991px) {
+    .contact {
+        background: url('contact.jpg') no-repeat center center/cover; /* Set image as background */
+        flex-direction: column;
+        background-size: cover;
+        background-position: center;
+        padding: 40px 20px; /* Reduce padding for smaller screens */
+    }
+
+    .contact img {
+        width: 80%; /* Adjust image width */
+        margin: 20px auto; /* Center align image */
+    }
+
+    .contact .form {
+        width: 100%; /* Full width form */
+        margin: 20px auto; /* Center align form */
+        text-align: center; /* Center align text */
+    }
+
+    .contact .form h1 {
+        font-size: 2em; /* Reduce heading size */
+    }
+
+    .contact .form .inputBx input,
+    .contact .form .inputBx textarea {
+        font-size: 0.9em; /* Reduce font size for inputs */
+    }
+    .contact img {
+        display: none; /* Hide the standalone image */
+    }
+}
+
+/* For screens smaller than 576px (Mobile Phones) */
+@media (max-width: 576px) {
+    .contact {
+        padding: 30px 15px; /* Further reduce padding */
+        background: url('contact.jpg') no-repeat center center/cover; /* Set image as background */
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh; /* Reduce height for mobile */
+    }
+
+    .contact .form {
+        width: 100%; /* Full width form */
+        text-align: center; /* Center align text */
+        background: rgba(5, 14, 45, 0.8); /* Semi-transparent overlay for readability */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .contact .form h1 {
+        font-size: 1.8em; /* Further reduce heading size */
+    }
+
+    .contact .form .inputBx input,
+    .contact .form .inputBx textarea {
+        font-size: 0.8em; /* Further reduce font size for inputs */
+    }
+
+    .contact .form .inputBx input[type="submit"] {
+        font-size: 0.9em; /* Reduce button font size */
+        padding: 8px 16px; /* Reduce padding for buttons */
+    }
+
+    .contact img {
+        display: none; /* Hide the standalone image */
+    }
+}
 /* footer */
 footer{
     padding: 10px 100px;
@@ -574,12 +789,132 @@ footer .info ul li:hover a i{
         z-index: 1;
         border-radius: 10px;
     }
-    .about{
+   
+    /* About Us Section */
+.about {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    padding: 60px 100px; /* Add padding to match other sections */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #050e2d; /* Match the background color of the home page */
+    color: #fff;
+}
+
+.about .contentBx {
+    width: 50%;
+    margin: 20px;
+}
+
+.about .contentBx h2 {
+    font-size: 3em;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.about .contentBx p {
+    max-width: 600px;
+    text-align: justify;
+    color: #dbd9d9;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about .contentBx a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 1px solid #1aeeef;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: #fff;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.about .contentBx a:hover {
+    background: #1aeeef;
+    border: none;
+    color: #050e2d;
+    box-shadow: 0 0 10px #1aeeef;
+}
+
+.about img {
+    width: 45%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(26, 238, 239, 0.3);
+}
+
+/* Responsive Design for About Us Section */
+
+/* For screens smaller than 991px (Tablets and Small Laptops) */
+@media (max-width: 991px) {
+    .about {
         flex-direction: column;
+        background: url('videogame.png') no-repeat center center/cover; /* Set image as background */
+        padding: 40px 20px; /* Reduce padding for smaller screens */
     }
+
     .about .contentBx {
-        width: 100%;
+        width: 100%; /* Full width content box */
+        text-align: center; /* Center align text */
     }
+
+    .about .contentBx h2 {
+        font-size: 2.5em; /* Reduce heading size */
+    }
+
+    .about .contentBx p {
+        font-size: 0.9em; /* Reduce paragraph font size */
+        margin: 10px auto; /* Center align paragraphs */
+        max-width: 100%; /* Allow full width on small screens */
+    }
+
+    .about img {
+        display: none; /* Hide the standalone image */
+    }
+}
+
+/* For screens smaller than 576px (Mobile Phones) */
+@media (max-width: 576px) {
+    .about {
+        padding: 30px 15px; /* Further reduce padding */
+        background: url('videogame.png') no-repeat center center/cover; /* Set image as background */
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh; /* Reduce height for mobile */
+    }
+
+    .about .contentBx {
+        width: 100%; /* Full width content box */
+        text-align: center; /* Center align text */
+        background: rgba(5, 14, 45, 0.8); /* Semi-transparent overlay for readability */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .about .contentBx h2 {
+        font-size: 2em; /* Further reduce heading size */
+    }
+
+    .about .contentBx p {
+        font-size: 0.8em; /* Further reduce paragraph font size */
+        margin: 10px auto; /* Center align paragraphs */
+        max-width: 100%; /* Allow full width on small screens */
+    }
+
+    .about .contentBx a {
+        font-size: 0.9em; /* Reduce button font size */
+        padding: 8px 16px; /* Reduce padding for buttons */
+    }
+}
     .contact{
         flex-direction: column;
     }
@@ -609,6 +944,7 @@ footer .info ul li:hover a i{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: white;
     background: #050e2d;
 }
 
@@ -628,6 +964,21 @@ footer .info ul li:hover a i{
     object-fit: cover;
     border: 3px solid #1aeeef;
     margin: 10px auto;
+}
+/* Style for Avatar Options (Circular and bordered) */
+.avatar-option {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1aeeef;
+    margin: 10px auto;
+    cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+}
+
+/* Optional: Style for when an avatar is selected (add an active class) */
+.avatar-option.selected {
+    border: 3px solid #ff9800; /* Change border color when selected */
 }
 
 .profile .card h2 {
@@ -655,6 +1006,7 @@ footer .info ul li:hover a i{
 .profile .card .stats div h3 {
     color: #1aeeef;
     font-size: 1.2em;
+    
 }
 
 .profile .card .stats div span {
@@ -958,111 +1310,168 @@ footer .info ul li:hover a i{
 
 /* gears styles */
 
-*{
-    margin:0;
-    padding: 0;
-    font-family: 'poppins',sans-serif;
+/* Gears Section */
+
+.gears {
+    padding: 60px 100px; /* Add padding to match other sections */
+    background: #050e2d; /* Match the background color of the home page */
+    text-align: center; /* Center-align the heading and description */
 }
 
-.gears{
-    display: flex;
-    padding:20px;
-    justify-content: space-evenly;
+.gears h2 {
+
+    color: #fff;
+    font-size: 2.5em;
+    margin-left: 60px; /* Add space below the heading */
 }
-.c1{
-    display:grid;
+
+.gears .gears-description {
+    color: #dbd9d9;
+    font-size: 1em;
+    max-width: 800px;
+    margin: 0 auto 10px; /* Center the description and add space below */
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+.gears-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px; /* Add space between gear items */
+}
+.gears {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Add space between items */
+    padding: 20px;
+    background: #050e2d; /* Match the background color of the home page */
+}
+
+.c1 {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin:1em;
-    align-content: center;
+    justify-content: center;
     position: relative;
-    width: 320px;
+    width: 300px; /* Fixed width for each gear item */
     height: 450px;
-    background: #122936;
+    background: #1b2141; /* Match the card background color */
     border-radius: 20px;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px; /* Add margin to ensure spacing */
 }
-.c1::before{
+
+.c1:hover {
+    transform: translateY(-10px); /* Add a slight lift effect on hover */
+    box-shadow: 0 10px 20px rgba(26, 238, 239, 0.3); /* Neon glow effect */
+}
+.c1::before {
     content: '';
     position: absolute;
-    top:-50%;
-    width:100%;
+    top: -50%;
+    width: 100%;
     height: 100%;
-    background:#2196f3;
-    transform:0.5s;
+    background: #1aeeef; /* Neon blue color */
     transform: skewY(-35deg);
-    transition: 0.35s ease-in-out;
-    }
+    transition: 0.5s ease-in-out;
+}
 
-.c1:hover::before{
-    top:-50%;
+.c1:hover::before {
+    top: -50%;
     transform: skewY(35deg);
-    transition: .35s ease-in;
-}  
-.c1::after{
-    content: 'phillips';
+}
+
+.c1::after {
+    content: ' GTHUB ';
     position: absolute;
     bottom: 0;
     left: 0;
     font-weight: 600;
     font-size: 8em;
-    color: rgba(0,0,0,0.1);
+    color: rgba(0, 0, 0, 0.1);
 }
-.c1 .imgBx{
-    margin-left:35px ;
+
+.c1 .imgBx {
     position: relative;
-    align-items: center;
     width: 200px;
-    height:280px;
+    height: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 10px;
     z-index: 1;
 }
-.c1 .imgBx img{
-    max-width: 100%;
-    transition:0.5s ease;
-}
-.c1:hover .imgBx img{
 
+.c1 .imgBx img {
+    max-width: 100%;
+    transition: 0.5s ease;
+}
+
+.c1:hover .imgBx img {
     max-width: 70%;
 }
+
 .c1 .contentBx {
+    top:17%;
     position: relative;
-    padding:10px;
+    padding: 10px;
     display: flex;
-    top:50%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 1;
     transition: 0.35s ease;
 }
-.c1 .contentBx h3{
+
+.c1 .contentBx h3 {
     font-size: 18px;
-    color:#fff;
+    color: #fff;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.c1 .contentBx .price{
+
+.c1 .contentBx .h-price {
+    margin:0px;
+    align-content: center;
     font-size: 24px;
     color: #fff;
-    font-weight:500 ;
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
 .c1:hover .contentBx {
-    top:0%;
-    transition: 0.35s ease;
+    top: 0%;
     opacity: 1;
 }
-.b1{
+
+.b1 {
     display: flex;
-    flex-wrap:nowrap ;
+    flex-wrap: nowrap;
     gap: 1.5rem;
     justify-content: space-around;
+}
+
+/* Responsive Design for Gears Section */
+@media (max-width: 991px) {
+    .gears {
+        padding: 40px 20px; /* Reduce padding for smaller screens */
+    }
+
+    .gears h2 {
+        font-size: 2em; /* Reduce heading size for smaller screens */
+    }
+
+    .gears .gears-description {
+        font-size: 0.9em; /* Reduce description font size for smaller screens */
+    }
+
+    .c1 {
+        width: 100%; /* Make gear items take full width on smaller screens */
+        margin: 10px 0; /* Adjust margin for stacked items */
+    }
 }
 /* From Uiverse.io by andrew-demchenk0 */ 
 .AI-button {
@@ -1072,8 +1481,8 @@ footer .info ul li:hover a i{
     cursor: pointer;
     display: flex;
     align-items: center;
-    border: 1px solid #34974d;
-    background-color: #3aa856;
+    border: 1px solid #050e2d;
+    background-color: #050e2d;
   }
   
   .AI-button, .button__icon, .button__text {
@@ -1091,7 +1500,7 @@ footer .info ul li:hover a i{
     transform: translateX(109px);
     height: 100%;
     width: 39px;
-    background-color: #34974d;
+    background-color: rgba(0, 142, 236, 0.815);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1103,7 +1512,7 @@ footer .info ul li:hover a i{
   }
   
   .AI-button:hover {
-    background: #34974d;
+    background: rgba(41, 150, 223, 0.815);
   }
   
   .AI-button:hover .button__text {
@@ -1116,11 +1525,11 @@ footer .info ul li:hover a i{
   }
   
   .AI-button:active .button__icon {
-    background-color: #2e8644;
+    background-color: rgba(0, 142, 236, 0.815);
   }
   
   .AI-button:active {
-    border: 1px solid #2e8644;
+    border: 1px solid rgba(0, 142, 236, 0.815);
   }
 
   /* From Uiverse.io by mrhyddenn */ 
@@ -1248,4 +1657,601 @@ footer .info ul li:hover a i{
     transform-origin: bottom left;
   }
   
+  /* profile-window css */
+ /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Profile Overlay */
+.profile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Profile Window */
+.profile-window {
+    padding-bottom: 20px;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    margin: 50px auto;
+    background: #1b2141;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(26, 238, 239, 0.3);
+    border: 2px solid #1aeeef;
+    overflow: hidden;
+}
+
+/* Scrollable Content */
+.profile-content {
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+.profile-content::-webkit-scrollbar {
+    width: 8px;
+}
+.profile-content::-webkit-scrollbar-track {
+    background: #122936;
+    border-radius: 10px;
+}
+.profile-content::-webkit-scrollbar-thumb {
+    background: #1aeeef;
+    border-radius: 10px;
+}
+.profile-content::-webkit-scrollbar-thumb:hover {
+    background: #1557c0;
+}
+.profile-window h3{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-shadow: #2196f3;
+}
+
+.profile-window h2 {
+    text-shadow: #2196f3;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close-btn:hover {
+    color: #1aeeef;
+    transform: scale(1.2);
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #1aeeef;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px #1aeeef;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Neon Effect */
+.neon-effect {
+    animation: neonPulse 1.5s infinite alternate;
+}
+@keyframes neonPulse {
+    from { text-shadow: 0 0 5px #1aeeef; }
+    to { text-shadow: 0 0 20px #1aeeef; }
+}
+
+/* Bio Section */
+.bio-section {
+    margin-bottom: 30px;
+}
+.bio-text {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #1aeeef;
+    background: #122936;
+    color: #fff;
+    resize: none;
+}
+.save-bio {
+    background: linear-gradient(45deg, #1aeeef, #1557c0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.save-bio:hover {
+    background: linear-gradient(45deg, #1557c0, #1aeeef);
+    box-shadow: 0 0 15px #1aeeef;
+}
+
+/* Game Card Hover Animation */
+.game-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d1a2d;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #1aeeef;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(26, 238, 239, 0.4);
+}
+
+/* Play Button */
+.play-button {
+    background: linear-gradient(45deg, #1aeeef, #1557c0);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.play-button:hover {
+    background: linear-gradient(45deg, #1557c0, #1aeeef);
+    box-shadow: 0 0 15px #1aeeef;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-window {
+        width: 95%;
+        padding: 20px;
+    }
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    .bio-text {
+        height: 80px;
+    }
+    .section-title {
+        font-size: 1.5em;
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Profile Window Scrollable Content */
+.profile-content {
+    height: calc(100% - 60px); /* Adjust height to fit within the window */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Add padding to avoid overlap with scrollbar */
+}
+
+/* Custom Scrollbar */
+.profile-content::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.profile-content::-webkit-scrollbar-track {
+    background: #122936; /* Track color */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.profile-content::-webkit-scrollbar-thumb {
+    background: #1aeeef; /* Thumb color */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.profile-content::-webkit-scrollbar-thumb:hover {
+    background: #1557c0; /* Thumb color on hover */
+}
+
+/* Modal background */
+#registrationForm {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100vh;
+    background-color: rgba(5, 14, 45, 0.9);
+    z-index: 1000;
+    padding: 20px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: #050e2d;
+    border-radius: 10px;
+    padding: 40px;
+    width: 60%;
+    max-width: 600px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1100;
+} 
+
+
+/* Heading */
+h2#gameTitle {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Image */
+#gameImage {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    background-color: #1f2a48;
+    color: #fff;
+    border: 1px solid #4a6587;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: none;
+}
+
+/* Select */
+select {
+    width: 100%;
+    padding: 10px;
+    background-color: #1f2a48;
+    color: #fff;
+    border: 1px solid #4a6587;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Input (time) */
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #1f2a48;
+    color: #fff;
+    border: 1px solid #4a6587;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Buttons */
+#reg {
+    background-color: #3b5b8d;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#reg:hover {
+    background-color: #4a79a1;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ffffff;
+}
+
+.close:hover::after {
+    content: " Close";
+    font-size: 1rem;
+    margin-left: 5px;
+}
+#login a{
+    color:#050e2d;
+    background-color: white;
+}
+.game-card {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+.game-card:hover {
+    transform: scale(1.05);
+}
+.game-card .game-img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.play-button {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    background-color: #ff6b81;
+}
+.game-thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.remove-game {
+    background: #ff4d4d;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-game:hover {
+    background: #cc0000;
+}
+
+.registered-games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* gallery CSS starts */
+/* Gallery Section */
+.gallery {
+    padding: 60px 0; /* Add spacing above and below the gallery */
+    background: #050e2d; /* Background color matching Gaming Tournament Hub */
+    overflow: hidden; /* Hide overflow */
+   
+  }
   
+  .gallery .container {
+    max-width: 1200px; /* Limit container width for larger screens */
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .gallery-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px; /* Space between gallery items */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap items into place */
+    scroll-snap-align: center;
+    padding: 20px 0;
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: 350px; /* Hide scrollbar for Firefox */
+  }
+  
+  .gallery-list::-webkit-scrollbar {
+    height: 7px;
+    width:600px; /* Horizontal scrollbar height */
+}
+  
+  .gallery-list::-webkit-scrollbar-track {
+    background: #122936; /* Dark scrollbar track */
+    border-radius: 10px;
+    width:1000px;
+  }
+  
+  .gallery-list::-webkit-scrollbar-thumb {
+    background: #1aeeef; /* Neon blue scrollbar thumb */
+    border-radius: 10px;
+    
+  }
+  .gallery-list li:hover {
+    opacity: 1; /* Fully visible on hover */
+    transform: scale(1); /* Full size on hover */
+  }
+  .gallery-list li {
+    min-width: 300px; /* Minimum width for each gallery item */
+    list-style: none;
+    scroll-snap-align: center; /* Align items properly in the scroll */
+    opacity: 0.8; /* Slightly fade items outside the viewport */
+    transform: scale(0.95); /* Slightly shrink items outside the viewport */
+    transition: all 0.2s ease-in-out; /* Smooth transition */
+  }
+  
+  .gallery-item {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Fixed height for uniformity */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+  }
+  /*  animation  */
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  
+  .gallery-list li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: calc(0.2s * var(--i)); /* Delay based on item index */
+  }
+  
+  /* Hover Effects */
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 10px 20px rgba(26, 238, 239, 0.3); /* Neon glow */
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1); /* Zoom effect */
+  }
+  
+ 
+  /* Responsive Larger than 575px */
+/* Responsive Larger than 575px */
+@media (min-width: 575px) {
+    .gallery-list li {
+      min-width: 400px; /* Slightly larger width for medium screens */
+    }
+  
+    .gallery-item {
+      height: 300px; /* Increase height for medium screens */
+    }
+  }
+  
+  /* Responsive Larger than 768px */
+  @media (min-width: 768px) {
+    .gallery-list {
+      gap: 30px; /* Increased gap for larger screens */
+      padding: 30px 0;
+    }
+  
+    .gallery-item {
+      height: 350px; /* Further increase height for larger screens */
+    }
+  }
+  
+  /* Responsive Larger than 1024px */
+  @media (min-width: 1024px) {
+    .gallery-list li {
+        max-width:1000px;
+      min-width: 700px; /* Larger width for desktop screens */
+    }
+  
+    .gallery-item {
+      height: 450px; /* Taller height for desktop screens */
+    }
+  }
+/* gallery CSS ends */
+#bioDisplay{
+    color:white
+}
+

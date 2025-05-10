@@ -10,13 +10,15 @@
         <header>
             <a href="#" class="logo">Gamers</a>
             <ul class="nav">
-                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" id="openProfile">Profile</a></li> 
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#games">Games</a></li>
+                <li><a href="#gears">Gears</a></li>
                 <li><a href="#tournaments">Tournaments</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            
             <!-- From Uiverse.io by ZAKARIAE48CHELLE --> 
 <div class="input-wrapper">
     <button class="icon">
@@ -81,7 +83,7 @@
                 d="M19 4v6.406l-3.753 3.741-6.463-6.462 3.7-3.685h6.516zm2-2h-12.388l1.497 1.5-4.171 4.167 9.291 9.291 4.161-4.193 1.61 1.623v-12.388zm-5 4c.552 0 1 .449 1 1s-.448 1-1 1-1-.449-1-1 .448-1 1-1zm0-1c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm6.708.292l-.708.708v3.097l2-2.065-1.292-1.74zm-12.675 9.294l-1.414 1.414h-2.619v2h-2v2h-2v-2.17l5.636-5.626-1.417-1.407-6.219 6.203v5h6v-2h2v-2h2l1.729-1.729-1.696-1.685z"
               ></path>
             </svg>
-            <span>Log In</span>
+            <span><a id="login" href="login.html" style="text-decoration: none;color: rgb(15, 15, 119);">Log In</a> </span>
           </button>
         </li>
         <li>
@@ -100,7 +102,7 @@
                 d="M2.598 9h-1.055c1.482-4.638 5.83-8 10.957-8 6.347 0 11.5 5.153 11.5 11.5s-5.153 11.5-11.5 11.5c-5.127 0-9.475-3.362-10.957-8h1.055c1.443 4.076 5.334 7 9.902 7 5.795 0 10.5-4.705 10.5-10.5s-4.705-10.5-10.5-10.5c-4.568 0-8.459 2.923-9.902 7zm12.228 3l-4.604-3.747.666-.753 6.112 5-6.101 5-.679-.737 4.608-3.763h-14.828v-1h14.826z"
               ></path>
             </svg>
-            <span>Sign Up</span>
+            <span><a href="signup.html" style="text-decoration: none;color: rgb(15, 15, 119);">Sign up</a></span>
           </button>
         </li>
       </ul>
@@ -144,8 +146,151 @@
             </div>
             <img src="videogame.png">
         </div>
+<!-- profile window starts -->
+<!-- profile window starts -->
+<div class="profile-overlay" id="profileOverlay">
+    <div class="profile-window">
+        <!-- Close Button -->
+        <span class="close-btn" id="closeProfile">&times;</span>
 
+        <!-- Scrollable Content -->
+        <div class="profile-content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar-container">
+                    <img src="assassin.png" alt="profile-avatar" class="profile-avatar" id="profileAvatar">
+                    <label for="avatarInput" class="change-avatar-btn" id="changePhotoBtn">Change Photo</label>
+
+                    <!-- Avatar Options (Hidden by default) -->
+                    <!-- Avatar Options (Hidden by default) -->
+            <div id="avatarOptions" class="avatar-options" style="display: none;">
+                <img src="avatar1.jpg" alt="Avatar 1" class="avatar-option" data-avatar="avatar1.jpg">
+                <img src="avatar2.jpg" alt="Avatar 2" class="avatar-option" data-avatar="avatar2.jpg">
+                <img src="avatar3.jpg" alt="Avatar 3" class="avatar-option" data-avatar="avatar3.jpg">
+                <img src="avatar4.jpg" alt="Avatar 4" class="avatar-option" data-avatar="avatar4.jpg">
+                <img src="avatar5.jpg" alt="Avatar 5" class="avatar-option" data-avatar="avatar5.jpg">
+            </div>
+
+                </div>
+                <h2 id="username">Username</h2>
+                <p id="bioDisplay">Loading bio...</p> <!-- Display bio here -->
+            </div>
+
+            <!-- Profile Sections -->
+            <div class="profile-sections">
+                <!-- Bio Section -->
+                <div class="bio-section">
+                    <h3>About Me</h3>
+                    <textarea class="bio-text" id="bioText" placeholder="Write something about yourself..."></textarea>
+                    <button class="save-bio" id="saveBio">Save Bio</button>
+                </div>
+            </div>
+            <div class="registered-games">
+                <h3 class="section-title">Registered Games <span class="neon-effect">🎮</span></h3>
+                
+                <!-- Game Card 1 -->
+                <div class="game-card">
+                    <div class="game-info">
+                        <h4>Call of Duty Tournament</h4>
+                        <p class="game-timer" data-end="2024-12-31T23:59:59">00d 00h 00m 00s</p>
+                    </div>
+                    <button class="play-button">Play Now</button>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card">
+                    <div class="game-info">
+                        <h4>Fortnite Battle Royale</h4>
+                        <p class="game-timer" data-end="2024-11-15T18:00:00">00d 00h 00m 00s</p>
+                    </div>
+                    <button class="play-button">Play Now</button>
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div class="achievements-section">
+                <h3 class="section-title">Achievements <span class="neon-effect">🏆</span></h3>
+                <div class="badges">
+                    <span class="badge">Top 10 Player</span>
+                    <span class="badge">100 Wins</span>
+                    <span class="badge">Team Player</span>
+                </div>
+            </div>
+
+            <!-- Social Integration Section -->
+            <div class="social-section">
+                <h3 class="section-title">Social Links <span class="neon-effect">🔗</span></h3>
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-discord'></i></a>
+                    <a href="#"><i class='bx bxl-steam'></i></a>
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div class="settings-section">
+                <h3 class="section-title">Settings <span class="neon-effect">⚙️</span></h3>
+                <ul>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Privacy Settings</a></li>
+                    <li><a href="#">Theme Customization</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+<!-- gallery starts --><section class="gallery" id="gallery">
+  <div class="container">
+    <ul class="gallery-list has-scrollbar">
+      <!-- Gallery Item 1 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament1.jpg" alt="Gallery Image 1" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 2 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament2.jpg" alt="Gallery Image 2" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 3 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament3.jpg" alt="Gallery Image 3" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 4 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament4.jpg" alt="Gallery Image 4" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 5 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament5.jpg" alt="Gallery Image 5" loading="lazy">
+        </div>
+      </li>
+      <!-- Gallery Item 6 -->
+      <li>
+        <div class="gallery-item">
+          <img src="tournament6.jpg" alt="Gallery Image 6" loading="lazy">
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+ <!-- gallery ends -->
+                
         <!-- gears start -->
+        <div class="gears animeX" id="gears">
+            <h2>Gaming Gears</h2>
+            <p class="gears-description">Explore our collection of high-quality gaming gears to enhance your gaming experience. From wireless headphones to ergonomic chairs, we have everything you need to level up your setup.</p>
         
         <div class="gears">
             <div class="c1">
@@ -154,7 +299,7 @@
                 </div>
                 <div class="contentBx">
                     <h3>Wireless Headphones</h3>
-                    <h2 class="price">$40.<small>99</small></h2>
+                    <h2 class="h-price">&#8377;40.<small>99</small></h2>
                     <BR>
                     <div class="b1">
                     <!-- From Uiverse.io by mrhyddenn --> 
@@ -177,7 +322,7 @@
                 </div>
                 <div class="contentBx">
                     <h3>Wireless Headphones</h3>
-                    <h2 class="price">$40.<small>99</small></h2>
+                    <h2 class="h-price">&#8377;40.<small>99</small></h2>
                     <br>
                     <div class="b1">
                         <!-- From Uiverse.io by mrhyddenn --> 
@@ -200,7 +345,7 @@
                 </div>
                 <div class="contentBx">
                     <h3>Wireless Headphones</h3>
-                    <h2 class="price">$40.<small>99</small></h2>
+                    <h2 class="h-price">&#8377;40.<small>99</small></h2>
                     <br>
                     <div class="b1">
                         <!-- From Uiverse.io by mrhyddenn --> 
@@ -237,11 +382,13 @@
         </button>
         
         </div>
+        </div>
+
 <!-- gears end -->
 
         <!-- Games -->
         <div class="games animeX" id="games">
-            <h2>Popular Games</h2>
+            <h2 class="h-2">Popular Games</h2>
             <ul>
                 <li class="list active" data-filter="all">All</li>
                 <li class="list" data-filter="pc">Pc games</li>
@@ -255,7 +402,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;2,499</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Grand Theft Auto', 'game1.png')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -267,7 +414,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;2,999</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#"class="play-btn" onclick="openRegistrationForm('Batman Arkham City', 'game3.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -279,7 +426,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;2,199</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Assassins Creed Valhalla', 'game4.png')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -291,7 +438,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;1,800</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Spider man', 'game5.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -303,7 +450,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>&#8377;3,999</span></p>
-                            <a href="#">Buy Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('God of War', 'game6.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -315,7 +462,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>Free</span></p>
-                            <a href="#">Play Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Battle Grounds Mobile', 'game7.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -327,7 +474,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>Free</span></p>
-                            <a href="#">Play Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Call Of Duty', 'game8.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -339,7 +486,7 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>Free</span></p>
-                            <a href="#">Play Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Free Fire', 'game9.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -351,17 +498,47 @@
                         <div class="progress-line"><span></span></div>
                         <div class="info">
                             <p>Pricing<br><span>Free</span></p>
-                            <a href="#">Play Now</a>
+                            <a href="#" class="play-btn" onclick="openRegistrationForm('Shadow Fight Arena', 'game10.jpg')">Register Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Registration Modal -->
+        <div id="registrationForm" class="form-container" >
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2 id="gameTitle">Register for Tournament</h2>
+            <img id="gameImage" src="" alt="Game Image" class="game-img">
+            
+            <form>
+                <label>Tournament Details:</label>
+                <textarea placeholder="Tournament Info"></textarea>
+        
+                <label>Region:</label>
+                <select>
+                    <option>North America</option>
+                    <option>Europe</option>
+                    <option>Asia</option>
+                </select>
+        
+                <label>Preferred Time Slot:</label>
+                <input type="time">
+        
+                <label>
+                    <input type="checkbox" required> I confirm I am 18 years or older.
+                </label>
+                <label>
+                    <input type="checkbox" required> I agree to the tournament rules and code of conduct.
+                </label>
+        
+                <button type="submit" id="reg">Register</button>
+            </form>
+        </div>
 
         <!-- Tournaments -->
         <div class="tournaments animeX" id="tournaments">
-            <h2>Live Tournaments</h2>
+            <h2 class="h-2">Live Tournaments</h2>
             <div class="boxBx">
                 <div class="box">
                     <img src="tournament1.jpg">
@@ -376,7 +553,7 @@
                 </div>
 
                 <div class="box">
-                    <img src="tournament2.jpeg">
+                    <img src="tournament2.jpg">
                     <div class="content">
                         <h4><span>30</span> Matches in progress..</h4>
                         <p>Among Us is a multiplayer party game set in space, where players work together to complete tasks while trying to identify the Impostors among the crew.</p>
@@ -438,9 +615,9 @@
         </div>
 
         <!--Contact for conducting the tournament-->
-        <div class="contact animeX" id="contact">
+        <div class="contact animeX" >
             <div class="form">
-                <h1>Want to conduct one</h1>
+                <h2 class="h-2">Want to conduct one</h2>
                 <div class="inputBx">
                     <p>Enter Company Name</p>
                     <input type="text" placeholder="Full Name">
@@ -573,9 +750,281 @@
                     }
                 })
             }
+        // profile window script
+// Open Profile Window
+document.getElementById('openProfile').addEventListener('click', function () {
+    document.getElementById('profileOverlay').style.display = 'block';
+});
 
-            
+// Close Profile Window
+document.getElementById('closeProfile').addEventListener('click', function () {
+    document.getElementById('profileOverlay').style.display = 'none';
+}); 
+/*for registration*/
+function openRegistrationForm(gameTitle, gameImage) {
+    var modal = document.getElementById("registrationForm");
+    var gameTitleElement = document.getElementById("gameTitle");
+    var gameImageElement = document.getElementById("gameImage");
 
-        </script>
+    gameTitleElement.textContent = "Register for " + gameTitle;
+    gameImageElement.src = gameImage;
+    
+    modal.style.display = "block"; // Ensure the modal is displayed when this function is called
+}
+
+function closeForm() {
+    document.getElementById("registrationForm").style.display = "none";
+}
+function openForm(gameTitle, gameImage) {
+    document.getElementById("gameTitle").innerText = gameTitle;
+    document.getElementById("gameImage").src = gameImage;
+    document.getElementById("registrationForm").style.display = "block";
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var formContainer = document.querySelector('.form-container');
+    formContainer.style.display = 'none'; // Initially hide the form.
+
+    // Example for showing the form (can be triggered by some event like a button click)
+    document.getElementById('showFormButton').addEventListener('click', function() {
+        formContainer.style.display = 'block';
+    });
+
+    // Example for closing the form (can be triggered by clicking the close button)
+    document.querySelector('.close').addEventListener('click', function() {
+        formContainer.style.display = 'none';
+    });
+});
+document.addEventListener("DOMContentLoaded", async () => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        alert("You must log in first!");
+        window.location.href = "login.html";
+        return;
+    }
+
+    // Fetch user data from backend
+    try {
+        const response = await fetch("http://localhost:3000/profile", {
+            method: "GET",
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) throw new Error(data.message);
+
+        document.getElementById("username").innerText = data.username;
+        document.getElementById("bioDisplay").innerText = data.bio || "No bio added yet.";
+
+    } catch (error) {
+        console.error("Error fetching profile:", error.message);
+        alert("Session expired. Please log in again.");
+        localStorage.removeItem("token");
+        window.location.href = "login.html";
+    }
+});
+
+
+
+// Handle Bio Save
+document.getElementById("saveBio").addEventListener("click", async () => {
+    const token = localStorage.getItem("token");
+    const newBio = document.getElementById("bioText").value;
+
+    if (!newBio.trim()) {
+        alert("Bio cannot be empty.");
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:3000/profile/bio", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ bio: newBio })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) throw new Error(data.message);
+
+        document.getElementById("bioDisplay").innerText = newBio; // Update displayed bio
+        alert("Bio updated successfully!");
+
+    } catch (error) {
+        console.error("Error updating bio:", error.message);
+        alert("Failed to update bio.");
+    }
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.error("No token found. User might not be logged in.");
+        return;
+    }
+
+    fetch("http://localhost:3000/profile", {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.avatar) {
+            document.getElementById("profileAvatar").src = data.avatar;
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching profile:", error);
+    });
+});
+
+document.getElementById("changePhotoBtn").addEventListener("click", function () {
+    document.getElementById("avatarOptions").style.display = "block";
+});
+
+const avatarOptions = document.querySelectorAll(".avatar-option");
+avatarOptions.forEach(option => {
+    option.addEventListener("click", function () {
+        const selectedAvatar = option.getAttribute("data-avatar");
+        document.getElementById("profileAvatar").src = selectedAvatar;
+
+        const token = localStorage.getItem("token");
+
+        fetch("http://localhost:3000/profile/avatar", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ avatar: selectedAvatar })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            localStorage.setItem("userAvatar", selectedAvatar); // Store in localStorage
+        })
+        .catch(error => {
+            alert("Error updating avatar.");
+        });
+
+        document.getElementById("avatarOptions").style.display = "none";
+    });
+});
+
+
+document.getElementById("reg").addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const token = localStorage.getItem("token"); // Get user's token
+    if (!token) {
+        alert("You need to be logged in to register.");
+        return;
+    }
+
+    const gameTitle = document.getElementById("gameTitle").innerText;
+    const gameImage = document.getElementById("gameImage").src;
+    const tournamentDetails = document.querySelector("textarea").value;
+    const region = document.querySelector("select").value;
+    const timeSlot = document.querySelector("input[type='time']").value;
+
+    const response = await fetch("http://localhost:3000/register-game", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ gameTitle, gameImage, tournamentDetails, region, timeSlot })
+    });
+
+    const data = await response.json();
+    if (response.status === 400) {
+        alert(data.message); // Show error message if already registered
+    } else if (data.message === "Game registered successfully") {
+        alert("Successfully registered!");
+        closeForm(); // Close the form after successful registration
+        loadRegisteredGames(); // Refresh the list of registered games
+    } else {
+        alert("Failed to register.");
+    }
+});
+
+
+
+
+// Function to update the Registered Games section in Profile
+async function loadRegisteredGames() {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    const response = await fetch("http://localhost:3000/profile", {
+        headers: { Authorization: `Bearer ${token}` }
+    });
+
+    const data = await response.json();
+    const gamesContainer = document.querySelector(".registered-games");
+
+    gamesContainer.innerHTML = `<h3 class="section-title">Registered Games <span class="neon-effect">🎮</span></h3>`;
+
+    data.registeredGames.forEach(game => {
+        const gameCard = document.createElement("div");
+        gameCard.classList.add("game-card");
+        gameCard.innerHTML = `
+    <div class="game-info">
+        <h4>${game.gameTitle}</h4>
+        <img src="${game.gameImage}" class="game-img" alt="${game.gameTitle}" style="width: 120px; height: auto; border-radius: 10px;">
+        <p>${game.tournamentDetails}</p>
+        <p><strong>Region:</strong> ${game.region}</p>
+        <p><strong>Time Slot:</strong> ${game.timeSlot}</p>
+    </div>
+    <button class="play-button">Play Now</button>
+`;
+
+        gamesContainer.appendChild(gameCard);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", loadRegisteredGames);
+
+// gallery js
+// Lazy Load Images in Gallery
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryImages = document.querySelectorAll(".gallery-item img");
+
+  galleryImages.forEach((img) => {
+    img.setAttribute("loading", "lazy");
+    img.addEventListener("load", () => {
+      img.classList.add("loaded");
+    });
+  });
+});
+// gallery
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryItems = document.querySelectorAll(".gallery-list li");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.2 }); // Trigger when 20% of the item is visible
+
+  galleryItems.forEach((item, index) => {
+    item.style.setProperty("--i", index); // Set custom property for delay
+    observer.observe(item);
+  });
+});
+</script>
     </body>
 </html>
